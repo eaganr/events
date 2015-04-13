@@ -1,0 +1,31 @@
+{% extends "events/base.html" %}
+
+{% block content %}
+
+		<div class="events">
+			<span class="events-subtitle">Live Events</span>
+			{% for event in live_events %}
+				<div class="event">
+					<a href="/event/{{event.hashtag}}/">{{event.title}}</a>
+				</div>
+			{% endfor %}
+			<br />
+
+			<span class="events-subtitle">Recent Events</span>
+			{% for event in recent_events %}
+				<div class="event">
+					<a href="/event/{{event.hashtag}}/">{{event.title}}</a>
+				</div>
+			{% endfor %}
+			<br />
+
+			<span class="events-subtitle">Upcoming Events</span>
+			{% for event in upcoming_events %}
+				<div class="event">
+					<a href="/event/{{event.hashtag}}/">{{event.title}}</a>
+				</div>
+			{% endfor %}
+			<br />
+		</div>
+
+{% endblock %}
